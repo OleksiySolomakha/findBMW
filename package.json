@@ -1,7 +1,7 @@
 {
   "name": "findbmw",
   "version": "1.0.0",
-  "description": "Create autotest which will find a needfull BMW from autorai.ua",
+  "description": "Create autotest which will find a needful BMW from autoria.ua",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
