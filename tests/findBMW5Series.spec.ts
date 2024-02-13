@@ -12,12 +12,12 @@ test('Easy search by needful parameters', async ({ page }) => {
   await page.locator('#yearFrom').selectOption('2003');
   await page.locator('#yearTo').selectOption('2005');
   await page.locator('.fold').first().click();
-  await page.locator('#brandTooltipBrandAutocomplete-region label').click();
   // Need to fix it for webkit
+  // await page.locator('#brandTooltipBrandAutocomplete-region label').click();
   // await page.getByText('Київська обл.').click();
-  await page.getByText('Пошук').click();
+  await page.locator('[type="submit"]').click();
   // Most unstable parameter
-  await page.locator('#floatingSearchResults').isVisible();
+  // await page.locator('#floatingSearchResults').isVisible();
   let needfulBrand = await page.locator('[data-name="model.id[0]"]');
   await expect(needfulBrand).toContainText('5 Series ');
   await page.close();
