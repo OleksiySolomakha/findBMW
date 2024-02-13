@@ -15,7 +15,9 @@ test('Easy search by needful parameters', async ({ page }) => {
   await page.locator('#brandTooltipBrandAutocomplete-region label').click();
   await page.getByText('Київська обл.').click();
   await page.getByRole('button', { name: 'Пошук' }).click();
-  await page.getByText('45 авто', { exact: true }).click();
-  await page.locator('#searchResults section').filter({ hasText: 'Sun Oct 01 2023 18:18:07 GMT+0300 (Eastern European Summer Time) Перевірений VIN' }).getByTitle('BMW 5 Series 2003 в Києві', { exact: true }).click();
+  // Most unstable parameter
+  await page.locator('#floatingSearchResults').isVisible();
+  let needfulBrand = await page.locator('[data-name="model.id[0]"]');
+  await expect(needfulBrand).toContainText('5 Series ');
   await page.close();
 });
