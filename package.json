@@ -1,9 +1,11 @@
 {
   "name": "findbmw",
   "version": "1.0.0",
-  "description": "Create autotest which will find a needful BMW from autoria.ua",
+  "description": "Create automation tests which will find a needful BMW on autoria.ua",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test --project=chromium"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
