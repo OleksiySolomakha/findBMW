@@ -15,7 +15,7 @@ test('Easy search by needful parameters', async ({ page }) => {
   await page.locator('#brandTooltipBrandAutocomplete-region label').click();
   // Need to fix it for webkit
   // await page.getByText('Київська обл.').click();
-  await page.getByRole('button', { name: 'Пошук' }).click();
+  await page.getByText('Пошук').click();
   // Most unstable parameter
   await page.locator('#floatingSearchResults').isVisible();
   let needfulBrand = await page.locator('[data-name="model.id[0]"]');
