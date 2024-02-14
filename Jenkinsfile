@@ -1,6 +1,6 @@
 pipeline {
   agent { 
-    docker { 
+    any { 
       image 'mcr.microsoft.com/playwright:v1.41.1-jammy'
     } 
   }
