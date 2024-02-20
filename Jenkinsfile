@@ -1,10 +1,16 @@
 pipeline {
   agent { 
     any { 
+      image 'node:20.11.1-alpine3.19'
       image 'mcr.microsoft.com/playwright:v1.41.1-jammy'
     } 
   }
   stages {
+    stage('install node'){
+      steps {
+        sh 'npm install'
+      }
+    }
     stage('install playwright') {
       steps {
         sh '''
